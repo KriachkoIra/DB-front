@@ -1,0 +1,16 @@
+.col > div{
+    text-align: center;
+}
+
+.container-employees{
+    margin-top: 40px;
+    padding-right: 30px;
+}
+
+.btn{
+    margin-top: 15px;
+}
+
+.col{
+    margin-bottom: 25px;
+}
