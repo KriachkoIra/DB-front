@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Створити товар</title>
+    <title>Створити категорію</title>
 
     <!-- font awesome -->
   <script src="https://kit.fontawesome.com/999afff8dc.js" crossorigin="anonymous"></script>
@@ -20,10 +20,10 @@
 
         h4{
           text-align: center;
-          margin-top: 30px;
+          margin-top: 60px;
         }
 
-        input, textarea, .form-select{
+        input, textarea{
           border: 1px solid black !important;
         }
 
@@ -32,7 +32,7 @@
           font-weight: 500;
           width: 150px;
           margin: auto;
-          margin-top: 15px;
+          margin-top: 20px;
         }
 
     </style>
@@ -74,39 +74,18 @@
 
       <!-------- MAIN CONTENT ------->
     <div class="container">
-      <h4 class="mb-3">Додати товар</h4>
+      <h4 class="mb-3">Додати категорію товарів</h4>
 
       <form method="POST" action="#">
         <div class="row g-3">
-          <div class="col-sm-4">
-            <label for="goodId" class="form-label">#id</label>
-            <input type="text" class="form-control" id="goodId" name="goodId" required>
+          <div class="col-12">
+            <label for="categoryId" class="form-label">#id (номер категорії)</label>
+            <input type="text" class="form-control" id="categoryId" name="categoryId" required>
           </div>
 
-          <div class="col-sm-8">
+          <div class="col-12">
             <label for="name" class="form-label">Назва</label>
             <input type="text" class="form-control" id="name" name="name" required>
-          </div>
-
-          <div class="col-12">
-            <label for="producer" class="form-label">Виробник</label>
-            <input type="text" class="form-control" id="producer" name="producer" required>
-          </div>
-
-          <!-- тут вивести всі існуючі категорії -->
-          <div class="col-12">
-          <label for="category" class="form-label">Категорія товару</label>
-          <select class="form-select" id="category" required>
-            <option value="" selected>Без категорії</option>
-            <option value="1">Категорія 1</option>
-            <option value="2">Категорія 2</option>
-            <option value="3">Категорія 3</option>
-          </select>
-          </div>
-
-          <div class="col-12">
-            <label for="characteristics" class="form-label">Характеристики</label>
-            <textarea rows="6" class="form-control" id="characteristics" name="characteristics" required></textarea>
           </div>
 
         <br>
