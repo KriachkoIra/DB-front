@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Додати працівника</title>
+    <title>Додати постійного клієнта</title>
 
     <!-- font awesome -->
   <script src="https://kit.fontawesome.com/999afff8dc.js" crossorigin="anonymous"></script>
@@ -20,7 +20,7 @@
 
         h4{
           text-align: center;
-          margin-top: 30px;
+          margin-top: 50px;
         }
 
         input{
@@ -32,7 +32,7 @@
           font-weight: 500;
           width: 150px;
           margin: auto;
-          margin-top: 15px;
+          margin-top: 25px;
         }
 
     </style>
@@ -74,38 +74,18 @@
 
       <!-------- MAIN CONTENT ------->
     <div class="container">
-      <h4 class="mb-3">Додати працівника</h4>
+      <h4 class="mb-3">Додати постійного клієнта</h4>
 
       <form method="POST" action="#">
         <div class="row g-3">
           <div class="col-sm-4">
-            <label for="empId" class="form-label">#id</label>
-            <input type="text" class="form-control" id="empId" name="empId" required>
+            <label for="cardId" class="form-label">#id (номер карти)</label>
+            <input type="text" class="form-control" id="cardId" name="cardId" required>
           </div>
 
           <div class="col-sm-8">
             <label for="name" class="form-label">ПІБ</label>
             <input type="text" class="form-control" id="name" name="name" required>
-          </div>
-
-          <div class="col-12">
-            <label for="position" class="form-label">Посада</label>
-            <input type="text" class="form-control" id="position" name="position" required>
-          </div>
-
-          <div class="col-12">
-            <label for="salary" class="form-label">Зарплата</label>
-            <input type="number" class="form-control" id="salary" name="salary" required>
-          </div>
-
-          <div class="col-6">
-            <label for="startDate" class="form-label">Дата початку роботи</label>
-            <input type="date" class="form-control" id="startDate" name="startDate" required>
-          </div>
-
-          <div class="col-6">
-            <label for="birthDate" class="form-label">Дата народження</label>
-            <input type="date" class="form-control" id="birthDate" name="birthDate" required>
           </div>
 
           <div class="col-12">
@@ -116,6 +96,11 @@
           <div class="col-12">
             <label for="address" class="form-label">Адреса</label>
             <input type="text" class="form-control" id="address" name="address" required>
+          </div>
+
+          <div class="col-12">
+            <label for="discount" class="form-label">Відсоток на знижку</label>
+            <input type="number" class="form-control" id="discount" name="discount" required>
           </div>
 
         <br>
