@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Створити чек</title>
+
+    <!-- font awesome -->
+  <script src="https://kit.fontawesome.com/999afff8dc.js" crossorigin="anonymous"></script>
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</head>
+<body>
+    <style>
+        .btn-outline-dark{
+          border: 2px solid;
+          font-weight: 500;
+          width: 150px;
+          margin: auto;
+          margin-top: 15px;
+        }
+
+        .container{
+            width: 50%;
+            min-width: 600px;
+        }
+
+        h4{
+          text-align: center;
+          margin-top: 50px;
+        }
+
+        input, select{
+          border: 1px solid black !important;
+        }
+
+        .btn-light{
+            width: 200px;
+            margin: auto;
+        }
+
+        .btn-submit{
+          border: 2px solid;
+          font-weight: 500;
+          width: 150px;
+          margin: auto;
+          margin-top: 25px;
+        }
+
+        .table-responsive{
+            margin: 20px 0 40px 0;
+        }
+
+        .edit-delete-btn{
+            width: 50px;
+            height: 35px;
+            border: none;
+            margin-top: 0;
+        }
+
+    </style>
+
+    <!------------------------ NAVBAR ---------------------->
+    <nav class="navbar navbar-expand-md bg-dark" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">ZLAGODA</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Головна</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Працівники</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Клієнти</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Категорії</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Товари</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Товари в магазині</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Чеки</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-------- MAIN CONTENT ------->
+    <div class="container">
+      <h4 class="mb-3">Створити чек</h4>
+
+      <form method="POST" action="#">
+        <div class="row g-3">
+          <div class="col-sm-6">
+            <label for="billId" class="form-label">#id (номер чека)</label>
+            <input type="text" class="form-control" id="billId" name="billId" required>
+          </div>
+
+          <div class="col-sm-6">
+            <label for="sum" class="form-label">Загальна сума</label>
+            <input type="number" class="form-control" id="sum" name="sum" required>
+          </div>
+
+          <div class="col-sm-6">
+            <label for="date" class="form-label">Дата</label>
+            <input type="date" class="form-control" id="date" name="date" required>
+          </div>
+
+          <div class="col-sm-6">
+            <label for="time" class="form-label">Час</label>
+            <input type="time" class="form-control" id="time" name="time" required>
+          </div>
+
+        <br>
+
+        
+        <h4 style="text-align: center; margin-top: 50px;">Товари</h4>
+    
+        <button type="button" class="btn btn-light" id="showFormButton" action="toggleForm">+ Додати товар</button>
+    
+        <!-- FORM FOR ADDING GOODS -->
+        <div class="row g-3" id="addGoodDiv" style="display: none;">
+            <form>    
+                <!-- тут вивести всі існуючі товари -->
+                <!-- замість value поставити назви товарів -->
+                <div class="col-12" >
+                <label for="good" class="form-label">Додайте товар до чеку</label>
+                <select class="form-select" id="good">
+                <option value="" selected>Товари</option>
+                <option value="Товар 1">Товар 1</option>
+                <option value="Товар 2">Товар 2</option>
+                <option value="Товар 3">Товар 3</option>
+                </select>
+                </div>
+
+                <div class="col-12">
+                <label for="price" class="form-label">Ціна продажу</label>
+                <input type="number" class="form-control" id="price" name="price">
+                </div>
+        
+                <br>
+        
+                <button class="btn btn-outline-dark" id="addGoodButton">Додати</button>
+            </form>
+        </div>
+
+        <!-- TABLE -->
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered table-sm">
+              <thead style="background-color: rgb(223, 223, 223);">
+                <tr>
+                  <th scope="col">Товар</th>
+                  <th scope="col">Ціна</th>
+                  <th scope="col" class="w-25">Видалити</th>
+                </tr>
+              </thead>
+              <tbody id="goodsTable">
+
+              </tbody>
+            </table>
+          </div>
+
+          <br>
+
+        <button class="btn btn-outline-dark btn-submit" type="submit">Створити</button>
+      </form>
+
+    </div>
+
+    <!-- список доданих товарів знаходиться в масиві goods (файл create_bill.js).
+    Я написала костиль, тому в масиві декі значення будуть null, і треба буде відібрати значення, які не null -->
+    
+    <!-- custom script -->
+    <script src="create_bill.js"></script>
+</body>
+</html>
