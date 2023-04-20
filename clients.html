@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Employees</title>
+    <title>Clients</title>
 
     <!-- font awesome -->
   <script src="https://kit.fontawesome.com/999afff8dc.js" crossorigin="anonymous"></script>
@@ -13,10 +13,9 @@
 </head>
 <body>
     <style>
-        .btn{
-            border: 2px solid;
+        .btn, input{
+            border: 2px solid !important;
             font-weight: 500;
-            width: 175px;
         }
         
         .table-responsive{
@@ -27,6 +26,10 @@
             width: 50px;
             height: 35px;
             border: none;
+        }
+
+        .mr-auto{
+          margin-right: auto;
         }
 
     </style>
@@ -69,44 +72,46 @@
       <!-------- MAIN CONTENT ------->
     <div class="container">
     
-        <div class="row justify-content-between" style="margin-top: 40px">
+        <div class="row justify-content-start" style="margin-top: 40px">
 
-        <div class = "col-4">
-            <!-- dropdown -->
-            <div class="dropdown">
-                <button class="btn btn-outline-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown button
-                </button>
-                <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Усі</a></li>
-                <li><a class="dropdown-item" href="#">Касири</a></li>
-                </ul>
-            </div>
+        <!-- search fields -->
+        <div class = "col-auto" >
+          <div class="input-group" style="margin-bottom: 5px; width: 275px;">
+            <input type="search" id="form1" class="form-control" placeholder="Шукати за прізвищем"/>
+            <button type="button" class="btn btn-outline-dark">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+        <div class = "col-auto mr-auto">
+          <div class="input-group" style="width: 232px;">
+            <input type="search" id="form1" class="form-control" placeholder="Шукати за знижкою"/>
+            <button type="button" class="btn btn-outline-dark">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
         </div>
 
-        <div class = "col-6" style="text-align: end">
+        <div class = "col-auto" >
             <!-- buttons -->
-            <button type="button" class="btn btn-outline-dark" action="#">Додати працівника</button>
-            <button type="button" class="btn btn-outline-dark" action="#">Друк працівників</button>
+            <button type="button" class="btn btn-outline-dark" action="#">Додати карту клієнта</button>
+            <button type="button" class="btn btn-outline-dark" action="#">Друк карт клієнтів</button>
         </div>
 
         </div>
 
 
         <!-- TABLE -->
-        <h2 style="text-align: center; margin-top: 30px;">Працівники</h2>
+        <h2 style="text-align: center; margin-top: 30px;">Карти клієнтів</h2>
         <div class="table-responsive">
             <table class="table table-striped table-sm">
               <thead>
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">ПІБ</th>
-                  <th scope="col">Посада</th>
-                  <th scope="col">Зарплата</th>
-                  <th scope="col">Дата початку роботи</th>
-                  <th scope="col">Дата народження</th>
                   <th scope="col">Телефон</th>
                   <th scope="col">Адреса</th>
+                  <th scope="col">Знижка</th>
                   <th scope="col">Редагувати</th>
                   <th scope="col">Видалити</th>
                 </tr>
@@ -118,9 +123,6 @@
                   <td>data</td>
                   <td>placeholder</td>
                   <td>text</td>
-                  <td>text</td>
-                  <td>text</td>
-                  <td>text</td>
                   <td><button type="button" class="btn btn-outline-dark edit-delete-btn" action="#"><i class="fa-solid fa-pen-to-square"></i></button></td>
                   <td><button type="button" class="btn btn-outline-dark edit-delete-btn" action="#"><i class="fa-solid fa-trash"></i></button></td>
                 </tr>
@@ -130,9 +132,6 @@
                   <td>irrelevant</td>
                   <td>visual</td>
                   <td>layout</td>
-                  <td>text</td>
-                  <td>text</td>
-                  <td>text</td>
                   <td><button type="button" class="btn btn-outline-dark edit-delete-btn" action="#"><i class="fa-solid fa-pen-to-square"></i></button></td>
                   <td><button type="button" class="btn btn-outline-dark edit-delete-btn" action="#"><i class="fa-solid fa-trash"></i></button></td>
                 </tr>
@@ -142,9 +141,6 @@
                   <td>rich</td>
                   <td>dashboard</td>
                   <td>tabular</td>
-                  <td>text</td>
-                  <td>text</td>
-                  <td>text</td>
                   <td><button type="button" class="btn btn-outline-dark edit-delete-btn" action="#"><i class="fa-solid fa-pen-to-square"></i></button></td>
                   <td><button type="button" class="btn btn-outline-dark edit-delete-btn" action="#"><i class="fa-solid fa-trash"></i></button></td>
                 </tr>
@@ -154,9 +150,6 @@
                   <td>placeholder</td>
                   <td>illustrative</td>
                   <td>data</td>
-                  <td>text</td>
-                  <td>text</td>
-                  <td>text</td>
                   <td><button type="button" class="btn btn-outline-dark edit-delete-btn" action="#"><i class="fa-solid fa-pen-to-square"></i></button></td>
                   <td><button type="button" class="btn btn-outline-dark edit-delete-btn" action="#"><i class="fa-solid fa-trash"></i></button></td>
                 </tr>
@@ -166,9 +159,6 @@
                   <td>random</td>
                   <td>layout</td>
                   <td>dashboard</td>
-                  <td>text</td>
-                  <td>text</td>
-                  <td>text</td>
                   <td><button type="button" class="btn btn-outline-dark edit-delete-btn" action="#"><i class="fa-solid fa-pen-to-square"></i></button></td>
                   <td><button type="button" class="btn btn-outline-dark edit-delete-btn" action="#"><i class="fa-solid fa-trash"></i></button></td>
                 </tr>
@@ -178,9 +168,6 @@
                   <td>irrelevant</td>
                   <td>text</td>
                   <td>placeholder</td>
-                  <td>text</td>
-                  <td>text</td>
-                  <td>text</td>
                   <td><button type="button" class="btn btn-outline-dark edit-delete-btn" action="#"><i class="fa-solid fa-pen-to-square"></i></button></td>
                   <td><button type="button" class="btn btn-outline-dark edit-delete-btn" action="#"><i class="fa-solid fa-trash"></i></button></td>
                 </tr>
